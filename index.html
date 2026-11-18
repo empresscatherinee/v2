@@ -1,0 +1,1954 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Personal portfolio of Empress Catherine J. Fufunan, Information Technology student at the University of San Agustin.">
+<meta name="theme-color" content="#faf8fc">
+
+<title>Empress Catherine | Personal Portfolio</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="" rel="stylesheet">
+
+<style>
+:root {
+    --bg:#faf8fc;
+    --surface:#ffffff;
+    --surface2:#f3edf9;
+    --surface3:#ebe0f5;
+    --text:#30283a;
+    --muted:#786e82;
+    --purple:#916cbd;
+    --purple-dark:#704b9c;
+    --border:#e8def0;
+    --shadow:0 12px 35px rgba(70,43,95,.07);
+    --header:rgba(250,248,252,.93);
+    --gradient:linear-gradient(135deg,#a984d2,#7953a4);
+}
+
+body.dark {
+    --bg:#1d1924;
+    --surface:#292331;
+    --surface2:#352b40;
+    --surface3:#443451;
+    --text:#f5eff9;
+    --muted:#c0b4ca;
+    --purple:#c2a0ed;
+    --purple-dark:#d6baf4;
+    --border:#493b54;
+    --shadow:0 12px 35px rgba(0,0,0,.2);
+    --header:rgba(41,35,49,.94);
+    --gradient:linear-gradient(135deg,#c5a2ed,#8764b1);
+}
+
+* {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body {
+    background:var(--bg);
+    color:var(--text);
+    font-family:'DM Sans',sans-serif;
+    line-height:1.7;
+    overflow-x:hidden;
+    transition:background .3s,color .3s;
+}
+
+a {
+    color:inherit;
+    text-decoration:none;
+}
+
+button,input,textarea {
+    font:inherit;
+}
+
+button {
+    cursor:pointer;
+}
+
+.container {
+    width:min(1120px,89%);
+    margin:auto;
+}
+
+section {
+    padding:100px 0;
+    scroll-margin-top:85px;
+}
+
+.eyebrow {
+    color:var(--purple);
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:3px;
+    text-transform:uppercase;
+}
+
+.section-heading {
+    max-width:680px;
+    margin-bottom:43px;
+}
+
+.section-heading h2 {
+    font-family:'Playfair Display',serif;
+    font-size:clamp(35px,5vw,48px);
+    line-height:1.2;
+    margin:12px 0;
+}
+
+.section-heading p {
+    color:var(--muted);
+    font-size:14px;
+}
+
+/* BUTTONS */
+
+.btn {
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:9px;
+    padding:13px 25px;
+    border-radius:30px;
+    font-size:12px;
+    font-weight:700;
+    border:1px solid transparent;
+    transition:.3s;
+}
+
+.btn-primary {
+    color:white;
+    background:var(--purple);
+    border-color:var(--purple);
+}
+
+.btn-outline {
+    color:var(--purple);
+    border-color:var(--purple);
+    background:transparent;
+}
+
+.btn:hover {
+    transform:translateY(-4px);
+    box-shadow:var(--shadow);
+}
+
+.btn-primary:hover {
+    background:var(--purple-dark);
+}
+
+/* NAVIGATION */
+
+header {
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:1000;
+    background:var(--header);
+    backdrop-filter:blur(16px);
+    border-bottom:1px solid var(--border);
+}
+
+.navbar {
+    min-height:76px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+}
+
+.logo {
+    font-family:'Playfair Display',serif;
+    font-size:28px;
+    font-weight:700;
+    color:var(--purple);
+    white-space:nowrap;
+}
+
+.logo span {
+    color:var(--purple-dark);
+}
+
+.nav-links {
+    display:flex;
+    align-items:center;
+    gap:18px;
+    list-style:none;
+}
+
+.nav-links a {
+    position:relative;
+    color:var(--muted);
+    font-size:11px;
+    font-weight:600;
+    transition:.25s;
+}
+
+.nav-links a::after {
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-7px;
+    width:0;
+    height:2px;
+    background:var(--purple);
+    transition:.25s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color:var(--purple);
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width:100%;
+}
+
+.nav-actions {
+    display:flex;
+    align-items:center;
+    gap:9px;
+}
+
+.icon-btn {
+    width:38px;
+    height:38px;
+    border-radius:50%;
+    border:1px solid var(--border);
+    background:var(--surface2);
+    color:var(--purple);
+    font-size:17px;
+    transition:.25s;
+}
+
+.icon-btn:hover {
+    background:var(--purple);
+    color:white;
+    transform:translateY(-3px);
+}
+
+.menu-btn {
+    display:none;
+}
+
+/* HERO */
+
+.hero {
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    padding-top:125px;
+    position:relative;
+    overflow:hidden;
+}
+
+.hero::before {
+    content:"";
+    position:absolute;
+    width:420px;
+    height:420px;
+    background:var(--surface2);
+    border-radius:50%;
+    top:10%;
+    right:-190px;
+    z-index:-1;
+}
+
+.hero::after {
+    content:"";
+    position:absolute;
+    width:220px;
+    height:220px;
+    background:var(--surface3);
+    opacity:.35;
+    border-radius:50%;
+    bottom:-100px;
+    left:-100px;
+    z-index:-1;
+}
+
+.hero-content {
+    display:grid;
+    grid-template-columns:1.2fr .8fr;
+    align-items:center;
+    gap:65px;
+}
+
+.hero h1 {
+    font-family:'Playfair Display',serif;
+    font-size:clamp(46px,6vw,76px);
+    line-height:1.13;
+    letter-spacing:-1.5px;
+    margin:20px 0;
+}
+
+.hero h1 span {
+    color:var(--purple);
+}
+
+.hero-description {
+    max-width:560px;
+    color:var(--muted);
+    font-size:14px;
+    margin-bottom:28px;
+}
+
+.hero-buttons {
+    display:flex;
+    flex-wrap:wrap;
+    gap:13px;
+}
+
+.hero-small {
+    margin-top:25px;
+    font-size:11px;
+    color:var(--muted);
+}
+
+.profile-wrapper {
+    display:flex;
+    justify-content:center;
+    position:relative;
+}
+
+.profile-frame {
+    width:325px;
+    height:410px;
+    padding:11px;
+    background:var(--gradient);
+    border-radius:175px 175px 25px 25px;
+    box-shadow:0 20px 50px rgba(102,70,139,.18);
+    transform:rotate(2deg);
+    transition:.4s;
+}
+
+.profile-frame:hover {
+    transform:rotate(0) translateY(-8px);
+}
+
+.profile-frame img {
+    display:block;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    background:var(--surface2);
+    border-radius:165px 165px 18px 18px;
+}
+
+.profile-note {
+    position:absolute;
+    bottom:24px;
+    right:-20px;
+    padding:13px 18px;
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:14px;
+    box-shadow:var(--shadow);
+    font-size:11px;
+    font-weight:700;
+    color:var(--muted);
+}
+
+/* ABOUT ME */
+
+.about-grid {
+    display:grid;
+    grid-template-columns:.8fr 1.2fr;
+    gap:24px;
+}
+
+.about-highlight,
+.about-card,
+.info-card,
+.skill-card,
+.value-card,
+.project-card {
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:22px;
+    box-shadow:var(--shadow);
+    transition:.3s;
+}
+
+.about-highlight:hover,
+.about-card:hover,
+.info-card:hover,
+.skill-card:hover,
+.value-card:hover,
+.project-card:hover {
+    transform:translateY(-5px);
+    box-shadow:0 18px 40px rgba(70,43,95,.11);
+}
+
+.about-highlight {
+    padding:32px;
+    background:var(--surface2);
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+.big-icon {
+    font-size:62px;
+    margin-bottom:15px;
+}
+
+.about-highlight h3,
+.about-card h3,
+.info-card h3,
+.skill-card h3,
+.value-card h3,
+.project-content h3 {
+    font-family:'Playfair Display',serif;
+    font-size:22px;
+    margin-bottom:12px;
+}
+
+.about-highlight p,
+.about-card p,
+.info-card p,
+.skill-card p,
+.value-card p,
+.project-content p {
+    font-size:13px;
+    color:var(--muted);
+}
+
+.about-card {
+    padding:32px;
+}
+
+.about-card p+p {
+    margin-top:13px;
+}
+
+/* EDUCATION */
+
+.education-section {
+    background:var(--surface2);
+}
+
+.education-layout {
+    display:grid;
+    grid-template-columns:1.1fr .9fr;
+    gap:35px;
+}
+
+.timeline {
+    position:relative;
+    padding-left:28px;
+}
+
+.timeline::before {
+    content:"";
+    position:absolute;
+    left:7px;
+    top:9px;
+    bottom:12px;
+    width:2px;
+    background:var(--purple);
+    opacity:.4;
+}
+
+.timeline-item {
+    position:relative;
+    background:var(--surface);
+    padding:23px 25px;
+    border:1px solid var(--border);
+    border-radius:16px;
+    margin-bottom:19px;
+    box-shadow:var(--shadow);
+    transition:.3s;
+}
+
+.timeline-item:hover {
+    transform:translateX(6px);
+}
+
+.timeline-item::before {
+    content:"";
+    position:absolute;
+    left:-28px;
+    top:28px;
+    width:13px;
+    height:13px;
+    border-radius:50%;
+    background:var(--purple);
+    border:3px solid var(--bg);
+}
+
+.timeline-year {
+    color:var(--purple);
+    font-size:11px;
+    font-weight:700;
+}
+
+.timeline-item h3 {
+    font-size:16px;
+    margin:5px 0;
+}
+
+.timeline-item p {
+    font-size:12px;
+    color:var(--muted);
+}
+
+.info-card {
+    padding:30px;
+}
+
+.course-tags,
+.skill-list {
+    display:flex;
+    flex-wrap:wrap;
+    gap:9px;
+    margin-top:18px;
+}
+
+.tag,
+.skill-list span {
+    background:var(--surface2);
+    color:var(--purple-dark);
+    padding:8px 13px;
+    border-radius:20px;
+    font-size:11px;
+    font-weight:600;
+}
+
+/* ACHIEVEMENTS */
+
+.achievement-grid {
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.achievement-card {
+    padding:30px 20px;
+    text-align:center;
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:20px;
+    box-shadow:var(--shadow);
+    transition:.3s;
+}
+
+.achievement-card:hover {
+    transform:translateY(-7px);
+    border-color:var(--purple);
+}
+
+.achievement-icon {
+    font-size:34px;
+    margin-bottom:12px;
+}
+
+.achievement-card h3 {
+    font-family:'Playfair Display',serif;
+    font-size:21px;
+}
+
+.achievement-card p {
+    color:var(--muted);
+    font-size:12px;
+}
+
+/* SKILLS */
+
+.skills-grid {
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:23px;
+}
+
+.skill-card {
+    padding:30px;
+}
+
+.skill-list span {
+    transition:.25s;
+}
+
+.skill-list span:hover {
+    background:var(--purple);
+    color:white;
+    transform:translateY(-3px);
+}
+
+/* PROJECTS */
+
+.projects-section {
+    background:var(--surface2);
+}
+
+.project-grid {
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:25px;
+}
+
+.project-card {
+    overflow:hidden;
+    display:flex;
+    flex-direction:column;
+}
+
+.project-preview {
+    min-height:210px;
+    background:linear-gradient(135deg,#e9def5,#c3a8df);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:24px;
+}
+
+.preview-window {
+    width:100%;
+    max-width:390px;
+    background:#292331;
+    color:#f1eaf8;
+    border-radius:12px;
+    padding:19px;
+    font-family:monospace;
+    font-size:11px;
+    line-height:2;
+    box-shadow:0 12px 25px rgba(0,0,0,.17);
+}
+
+.preview-dots {
+    display:flex;
+    gap:5px;
+    margin-bottom:12px;
+}
+
+.preview-dots span {
+    width:8px;
+    height:8px;
+    border-radius:50%;
+    background:#b89bd6;
+}
+
+.preview-title {
+    text-align:center;
+    color:#d8b9fa;
+    border-bottom:1px solid #5a4b69;
+    padding-bottom:9px;
+    margin-bottom:10px;
+}
+
+.preview-line {
+    color:#d7ccdf;
+}
+
+.preview-line span {
+    color:#c9a5f1;
+}
+
+.project-content {
+    padding:27px;
+    display:flex;
+    flex-direction:column;
+    flex:1;
+}
+
+.project-content .eyebrow {
+    font-size:10px;
+    letter-spacing:2px;
+}
+
+.project-content h3 {
+    margin-top:9px;
+}
+
+.project-content p {
+    margin-bottom:18px;
+}
+
+.project-tech {
+    color:var(--purple);
+    font-weight:700;
+    font-size:11px;
+    padding-top:13px;
+    border-top:1px solid var(--border);
+    margin-top:auto;
+}
+
+/* VALUES */
+
+.values-grid {
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.value-card {
+    padding:27px;
+}
+
+/* CONTACT */
+
+.contact-section {
+    text-align:center;
+}
+
+.contact-section .section-heading {
+    margin:0 auto 40px;
+}
+
+.contact-panel {
+    background:var(--surface2);
+    border:1px solid var(--border);
+    border-radius:25px;
+    padding:43px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+    text-align:left;
+    align-items:center;
+}
+
+.contact-info h3 {
+    font-family:'Playfair Display',serif;
+    font-size:29px;
+    margin-bottom:12px;
+}
+
+.contact-info p {
+    color:var(--muted);
+    font-size:13px;
+    margin-bottom:20px;
+}
+
+.contact-detail {
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin:16px 0;
+    color:var(--muted);
+    font-size:13px;
+    overflow-wrap:anywhere;
+}
+
+.contact-detail span:first-child {
+    font-size:19px;
+}
+
+.contact-detail a:hover {
+    color:var(--purple);
+}
+
+.contact-form {
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width:100%;
+    padding:15px;
+    background:var(--surface);
+    color:var(--text);
+    border:1px solid var(--border);
+    border-radius:12px;
+    outline:none;
+    font-size:12px;
+    transition:.25s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color:var(--purple);
+    box-shadow:0 0 0 3px rgba(150,112,199,.12);
+}
+
+.contact-form textarea {
+    min-height:135px;
+    resize:vertical;
+}
+
+.contact-form button {
+    align-self:flex-start;
+    padding:13px 27px;
+    border:none;
+    border-radius:30px;
+    background:var(--purple);
+    color:white;
+    font-size:12px;
+    font-weight:700;
+    transition:.3s;
+}
+
+.contact-form button:hover {
+    background:var(--purple-dark);
+    transform:translateY(-3px);
+}
+
+/* FOOTER */
+
+footer {
+    background:var(--surface);
+    border-top:1px solid var(--border);
+    padding:30px 0;
+    text-align:center;
+    color:var(--muted);
+    font-size:11px;
+}
+
+.footer-logo {
+    font-family:'Playfair Display',serif;
+    color:var(--purple);
+    font-size:25px;
+    margin-bottom:7px;
+}
+
+/* ANIMATIONS */
+
+.reveal {
+    opacity:0;
+    transform:translateY(25px);
+    transition:opacity .7s ease,transform .7s ease;
+}
+
+.reveal.show {
+    opacity:1;
+    transform:translateY(0);
+}
+
+.delay-1 {transition-delay:.12s;}
+.delay-2 {transition-delay:.22s;}
+
+/* BACK TO TOP */
+
+.back-top {
+    position:fixed;
+    right:25px;
+    bottom:25px;
+    width:45px;
+    height:45px;
+    border:none;
+    border-radius:50%;
+    background:var(--purple);
+    color:white;
+    font-size:20px;
+    opacity:0;
+    visibility:hidden;
+    transform:translateY(10px);
+    transition:.3s;
+    z-index:900;
+    box-shadow:var(--shadow);
+}
+
+.back-top.visible {
+    opacity:1;
+    visibility:visible;
+    transform:translateY(0);
+}
+
+.back-top:hover {
+    background:var(--purple-dark);
+}
+
+/* ACCESSIBILITY */
+
+:focus-visible {
+    outline:3px solid var(--purple);
+    outline-offset:4px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:1050px) {
+    .nav-links {gap:11px;}
+    .nav-links a {font-size:10px;}
+    .profile-frame {width:285px;height:365px;}
+}
+
+@media(max-width:800px) {
+    section {padding:75px 0;}
+
+    .menu-btn {display:block;}
+
+    .nav-links {
+        position:absolute;
+        top:76px;
+        left:0;
+        width:100%;
+        padding:25px 7%;
+        background:var(--surface);
+        display:none;
+        flex-direction:column;
+        align-items:flex-start;
+        gap:18px;
+        border-bottom:1px solid var(--border);
+        box-shadow:var(--shadow);
+    }
+
+    .nav-links.active {display:flex;}
+    .nav-links a {font-size:13px;}
+
+    .hero {
+        min-height:auto;
+        padding-top:135px;
+    }
+
+    .hero-content {
+        grid-template-columns:1fr;
+        text-align:center;
+        gap:42px;
+    }
+
+    .hero-description {
+        margin:0 auto 25px;
+    }
+
+    .hero-buttons {justify-content:center;}
+
+    .profile-frame {
+        width:275px;
+        height:350px;
+    }
+
+    .about-grid,
+    .education-layout,
+    .skills-grid,
+    .project-grid,
+    .contact-panel {
+        grid-template-columns:1fr;
+    }
+
+    .achievement-grid,
+    .values-grid {
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .contact-panel {
+        padding:30px 25px;
+        gap:30px;
+    }
+}
+
+@media(max-width:500px) {
+    .container {width:90%;}
+
+    .achievement-grid,
+    .values-grid {
+        grid-template-columns:1fr;
+    }
+
+    .hero h1 {font-size:45px;}
+
+    .profile-frame {
+        width:245px;
+        height:315px;
+    }
+
+    .profile-note {
+        right:-5px;
+        font-size:10px;
+    }
+
+    .about-card,
+    .about-highlight,
+    .info-card,
+    .skill-card,
+    .value-card,
+    .project-content {
+        padding:23px;
+    }
+
+    .contact-panel {padding:25px 19px;}
+
+    .section-heading h2 {font-size:35px;}
+}
+
+@media(prefers-reduced-motion:reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior:auto !important;
+        animation-duration:.01ms !important;
+        transition-duration:.01ms !important;
+    }
+
+    .reveal {
+        opacity:1;
+        transform:none;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+
+<header>
+    <div class="container navbar">
+
+        <a href="#home" class="logo">Empress<span>.</span></a>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#achievements">Achievements</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#values">Values</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+
+        <div class="nav-actions">
+            <button class="icon-btn" id="themeToggle"
+                aria-label="Switch to dark mode">☾</button>
+
+            <button class="icon-btn menu-btn" id="menuBtn"
+                aria-label="Open navigation"
+                aria-expanded="false">☰</button>
+        </div>
+
+    </div>
+</header>
+
+<!-- HOME -->
+
+<section class="hero" id="home">
+    <div class="container hero-content">
+
+        <div class="reveal">
+            <span class="eyebrow">WELCOME TO MY PORTFOLIO</span>
+
+            <h1>
+                Hello, I'm<br>
+                <span>Empress Catherine</span>
+            </h1>
+
+            <p class="hero-description">
+                An Information Technology student passionate
+                about learning, creativity, and exploring
+                the world of technology. I enjoy discovering
+                new ideas, developing my skills, and turning
+                what I learn into meaningful projects.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#about" class="btn btn-primary">
+                    Discover More →
+                </a>
+
+                <a href="#projects" class="btn btn-outline">
+                    Explore My Work
+                </a>
+            </div>
+
+            <p class="hero-small">
+                Learning, creating, and growing through technology.
+            </p>
+        </div>
+
+        <div class="profile-wrapper reveal delay-1">
+            <div class="profile-frame">
+                <img src="Hi.webp"
+                    alt="Profile photo of Empress Catherine J. Fufunan"
+                    width="325" height="410"
+                    fetchpriority="high">
+            </div>
+
+            <div class="profile-note">
+                BS Information Technology Student
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- ABOUT ME -->
+
+<section id="about">
+    <div class="container">
+
+        <div class="section-heading reveal">
+            <span class="eyebrow">GET TO KNOW ME</span>
+            <h2>About Me</h2>
+            <p>
+                A glimpse of who I am, what I enjoy,
+                and what I hope to achieve.
+            </p>
+        </div>
+
+        <div class="about-grid">
+
+            <div class="about-highlight reveal">
+                <div class="big-icon">👩🏻‍💻</div>
+
+                <h3>Empress Catherine J. Fufunan</h3>
+
+                <p>
+                    First-Year Bachelor of Science in
+                    Information Technology student at
+                    the University of San Agustin.
+                </p>
+            </div>
+
+            <div class="about-card reveal delay-1">
+
+                <p>
+                    My name is Empress Catherine J. Fufunan,
+                    and I am a Bachelor of Science in
+                    Information Technology student at the
+                    University of San Agustin.
+                </p>
+
+                <p>
+                    I enjoy learning new things, exploring
+                    creative ideas, and discovering how
+                    technology can make everyday life easier.
+                    As I continue my academic journey, I am
+                    building my knowledge of programming,
+                    web development, and computer technology.
+                </p>
+
+                <p>
+                    I believe that learning takes patience,
+                    practice, and determination. My goal is
+                    to become a capable IT professional who
+                    can develop useful solutions, work well
+                    with others, and continue learning as
+                    technology changes.
+                </p>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- EDUCATION -->
+
+<section class="education-section" id="education">
+    <div class="container">
+
+        <div class="section-heading reveal">
+            <span class="eyebrow">MY LEARNING JOURNEY</span>
+            <h2>Academic Background</h2>
+            <p>
+                Every stage of my education has helped me
+                learn, grow, and prepare for new opportunities.
+            </p>
+        </div>
+
+        <div class="education-layout">
+
+            <div class="timeline reveal">
+
+                <div class="timeline-item">
+                    <span class="timeline-year">2013 – 2019</span>
+                    <h3>Elementary Education</h3>
+                    <p>Lapaz 1 Elementary School</p>
+                </div>
+
+                <div class="timeline-item">
+                    <span class="timeline-year">2019 – 2023</span>
+                    <h3>Junior High School</h3>
+                    <p>Iloilo National High School</p>
+                    <p>Grade 10 – With Honors</p>
+                </div>
+
+                <div class="timeline-item">
+                    <span class="timeline-year">2023 – 2025</span>
+                    <h3>Senior High School</h3>
+                    <p>Iloilo National High School</p>
+                    <p>Grade 11 – With Honors</p>
+                    <p>Grade 12 – With Honors</p>
+                </div>
+
+                <div class="timeline-item">
+                    <span class="timeline-year">2025 – Present</span>
+                    <h3>College Education</h3>
+                    <p>Bachelor of Science in Information Technology</p>
+                    <p>University of San Agustin</p>
+                    <p>Expected Graduation: 2029</p>
+                </div>
+
+            </div>
+
+            <div class="info-card reveal delay-1">
+
+                <h3>Relevant Coursework</h3>
+
+                <p>
+                    My coursework helps me build a foundation
+                    in information technology and understand
+                    basic concepts of computing and
+                    software development.
+                </p>
+
+                <div class="course-tags">
+                    <span class="tag">Programming Fundamentals</span>
+                    <span class="tag">C++ Programming</span>
+                    <span class="tag">Web Development</span>
+                    <span class="tag">HTML & CSS</span>
+                    <span class="tag">JavaScript Basics</span>
+                    <span class="tag">Computer Technology</span>
+                </div>
+
+                <h3 style="margin-top:30px;">My Academic Goal</h3>
+
+                <p>
+                    To continuously improve my technical
+                    knowledge, strengthen my programming
+                    skills, and become more confident in
+                    developing technology-based projects.
+                </p>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ACHIEVEMENTS -->
+
+<section id="achievements">
+    <div class="container">
+
+        <div class="section-heading reveal">
+            <span class="eyebrow">MILESTONES & RECOGNITION</span>
+            <h2>My Achievements</h2>
+            <p>
+                Academic milestones that represent my
+                dedication and effort throughout my
+                educational journey.
+            </p>
+        </div>
+
+        <div class="achievement-grid">
+
+            <div class="achievement-card reveal">
+                <div class="achievement-icon">🏅</div>
+                <h3>Grade 10</h3>
+                <p>With Honors</p>
+            </div>
+
+            <div class="achievement-card reveal delay-1">
+                <div class="achievement-icon">🎓</div>
+                <h3>Grade 11</h3>
+                <p>With Honors</p>
+            </div>
+
+            <div class="achievement-card reveal delay-2">
+                <div class="achievement-icon">✨</div>
+                <h3>Grade 12</h3>
+                <p>With Honors</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- SKILLS -->
+
+<section id="skills">
+    <div class="container">
+
+        <div class="section-heading reveal">
+            <span class="eyebrow">WHAT I AM LEARNING</span>
+            <h2>My Skills</h2>
+            <p>
+                Technical abilities and personal qualities
+                that I continue to develop as an IT student.
+            </p>
+        </div>
+
+        <div class="skills-grid">
+
+            <div class="skill-card reveal">
+                <h3>Technical Skills</h3>
+
+                <p>
+                    Basic technical knowledge and programming
+                    concepts developed through coursework
+                    and hands-on activities.
+                </p>
+
+                <div class="skill-list">
+                    <span>C++</span>
+                    <span>GitHub Basics</span>
+                </div>
+            </div>
+
+            <div class="skill-card reveal delay-1">
+                <h3>Personal Skills</h3>
+
+                <p>
+                    Personal qualities that help me learn,
+                    communicate, and work effectively
+                    with other people.
+                </p>
+
+                <div class="skill-list">
+                    <span>Communication</span>
+                    <span>Teamwork</span>
+                    <span>Time Management</span>
+                    <span>Adaptability</span>
+                    <span>Creativity</span>
+                    <span>Problem-Solving</span>
+                    <span>Responsibility</span>
+                    <span>Willingness to Learn</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- PROJECTS -->
+
+<section class="projects-section" id="projects">
+    <div class="container">
+
+        <div class="section-heading reveal">
+            <span class="eyebrow">CLASSWORK & PRACTICE</span>
+            <h2>Selected Projects</h2>
+            <p>
+                A collection of academic programming activities
+                and web development work that reflects my
+                learning and creativity as an IT student.
+            </p>
+        </div>
+
+        <div class="project-grid">
+
+            <!-- PROJECT 1 -->
+
+            <article class="project-card reveal">
+
+                <div class="project-preview">
+                    <div class="preview-window">
+
+                        <div class="preview-dots">
+                            <span></span><span></span><span></span>
+                        </div>
+
+                        <div class="preview-title">C++ PROGRAMMING</div>
+
+                        <div class="preview-line">
+                            <span>01.</span> Rectangle Area Calculator
+                        </div>
+
+                        <div class="preview-line">
+                            <span>02.</span> Password Length Validator
+                        </div>
+
+                        <div class="preview-line">
+                            <span>03.</span> User Input
+                        </div>
+
+                        <div class="preview-line">
+                            <span>Language:</span> C++
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-content">
+                    <span class="eyebrow">ACADEMIC PROGRAMMING</span>
+
+                    <h3>C++ Programming Exercises</h3>
+
+                    <p>
+                        A collection of C++ programming
+                        activities focused on basic
+                        calculations and input validation.
+                        It includes a Rectangle Area Calculator
+                        and a Password Length Validator.
+                        These exercises helped me understand
+                        functions, user input, conditional
+                        statements, and basic programming logic.
+                    </p>
+
+                    <div class="project-tech">
+                        C++ · Functions · Conditional Statements
+                    </div>
+                </div>
+
+            </article>
+
+            <!-- PROJECT 2 -->
+
+            <article class="project-card reveal delay-1">
+
+                <div class="project-preview">
+                    <div class="preview-window">
+
+                        <div class="preview-dots">
+                            <span></span><span></span><span></span>
+                        </div>
+
+                        <div class="preview-title">BOOK INVENTORY SYSTEM</div>
+
+                        <div class="preview-line">
+                            <span>01.</span> Add Book
+                        </div>
+
+                        <div class="preview-line">
+                            <span>02.</span> Display Books
+                        </div>
+
+                        <div class="preview-line">
+                            <span>03.</span> Search Book
+                        </div>
+
+                        <div class="preview-line">
+                            <span>04.</span> Array of Objects
+                        </div>
+
+                        <div class="preview-line">
+                            <span>Language:</span> C++
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="project-content">
+
+                    <span class="eyebrow">ACADEMIC PROGRAMMING</span>
+
+                    <h3>Book Inventory System</h3>
+
+                    <p>
+                        A C++ program designed to manage book records
+                        using an array of objects. It demonstrates
+                        object-oriented programming, classes, objects,
+                        arrays, and basic data management.
+                        This activity helps develop my understanding
+                        of organizing and handling information
+                        through programming.
+                    </p>
+
+                    <div class="project-tech">
+                        C++ · Classes · Objects · Arrays
+                    </div>
+
+                </div>
+
+            </article>
+
+            <!-- PROJECT 3 -->
+
+            <article class="project-card reveal">
+
+                <div class="project-preview">
+                    <div class="preview-window">
+
+                        <div class="preview-dots">
+                            <span></span><span></span><span></span>
+                        </div>
+
+                        <div class="preview-title">C++ DATA HANDLING</div>
+
+                        <div class="preview-line">
+                            <span>01.</span> Daily Sales Logging
+                        </div>
+
+                        <div class="preview-line">
+                            <span>02.</span> Array Boundary Query
+                        </div>
+
+                        <div class="preview-line">
+                            <span>03.</span> In-Place Variable Swap
+                        </div>
+
+                        <div class="preview-line">
+                            <span>Language:</span> C++
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-content">
+                    <span class="eyebrow">ACADEMIC PROGRAMMING</span>
+
+                    <h3>C++ Data Handling Programs</h3>
+
+                    <p>
+                        A set of C++ programming activities
+                        demonstrating data management and
+                        manipulation. It includes Daily
+                        Sales Logging, Safe Array Boundary
+                        Query, and In-Place Variable Swap.
+                        These activities helped improve my
+                        understanding of arrays, vectors,
+                        references, and functions.
+                    </p>
+
+                    <div class="project-tech">
+                        C++ · Arrays · Vectors · Functions
+                    </div>
+                </div>
+
+            </article>
+
+            <!-- PROJECT 4 -->
+
+            <article class="project-card reveal delay-1">
+
+                <div class="project-preview">
+                    <div class="preview-window">
+
+                        <div class="preview-dots">
+                            <span></span><span></span><span></span>
+                        </div>
+
+                        <div class="preview-title">PERSONAL WEB PORTFOLIO</div>
+
+                        <div class="preview-line">
+                            <span>HTML5</span> Website Structure
+                        </div>
+
+                        <div class="preview-line">
+                            <span>CSS3</span> Visual Design
+                        </div>
+
+                        <div class="preview-line">
+                            <span>JavaScript</span> Interactivity
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-content">
+                    <span class="eyebrow">WEB DEVELOPMENT</span>
+
+                    <h3>Personal Web Portfolio</h3>
+
+                    <p>
+                        A personal website designed to introduce
+                        myself and showcase my educational
+                        background, academic achievements,
+                        skills, and projects. This project
+                        allows me to apply my knowledge of
+                        web development while creating a
+                        website that represents my identity
+                        as an Information Technology student.
+                    </p>
+
+                    <div class="project-tech">
+                        HTML5 · CSS3 · JavaScript
+                    </div>
+                </div>
+
+            </article>
+
+        </div>
+    </div>
+</section>
+
+<!-- VALUES -->
+
+<section id="values">
+    <div class="container">
+
+        <div class="section-heading reveal">
+            <span class="eyebrow">WHAT I BELIEVE IN</span>
+            <h2>Work Ethics & Core Values</h2>
+            <p>
+                The principles that guide my actions,
+                learning habits, and future professional growth.
+            </p>
+        </div>
+
+        <div class="values-grid">
+
+            <div class="value-card reveal">
+                <h3>Punctuality</h3>
+                <p>
+                    I value time and make an effort to
+                    complete responsibilities and tasks
+                    within the given schedule.
+                </p>
+            </div>
+
+            <div class="value-card reveal delay-1">
+                <h3>Teamwork</h3>
+                <p>
+                    I respect different ideas, cooperate
+                    with others, and contribute positively
+                    to group activities.
+                </p>
+            </div>
+
+            <div class="value-card reveal delay-2">
+                <h3>Continuous Learning</h3>
+                <p>
+                    I believe that learning never stops.
+                    I am willing to explore new knowledge
+                    and improve my abilities.
+                </p>
+            </div>
+
+            <div class="value-card reveal">
+                <h3>Responsibility</h3>
+                <p>
+                    I take responsibility for my actions
+                    and try my best to accomplish every
+                    task with dedication.
+                </p>
+            </div>
+
+            <div class="value-card reveal delay-1">
+                <h3>Adaptability</h3>
+                <p>
+                    I remain open to changes and new
+                    experiences, especially when learning
+                    unfamiliar technologies.
+                </p>
+            </div>
+
+            <div class="value-card reveal delay-2">
+                <h3>Integrity</h3>
+                <p>
+                    I value honesty, respect, and
+                    responsibility in my academic
+                    work and interactions with others.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT ME -->
+
+<section id="contact" class="contact-section">
+    <div class="container">
+
+        <div class="section-heading reveal">
+            <span class="eyebrow">LET'S CONNECT</span>
+            <h2>Contact Me</h2>
+            <p>
+                Have a question or want to connect?
+                Feel free to send me a message.
+            </p>
+        </div>
+
+        <div class="contact-panel reveal">
+
+            <div class="contact-info">
+                <h3>Let's talk!</h3>
+
+                <p>
+                    Feel free to contact me for questions,
+                    academic collaborations, or opportunities
+                    to learn and grow.
+                </p>
+
+                <div class="contact-detail">
+                    <span>📧</span>
+                    <a href="mailto:efufunan@usa.edu.ph">
+                        efufunan@usa.edu.ph
+                    </a>
+                </div>
+
+                <div class="contact-detail">
+                    <span>🎓</span>
+                    <span>University of San Agustin</span>
+                </div>
+
+                <div class="contact-detail">
+                    <span>💻</span>
+                    <span>Information Technology Student</span>
+                </div>
+            </div>
+
+            <form class="contact-form" id="contactForm">
+
+                <input
+                    type="text"
+                    id="senderName"
+                    placeholder="Your Name"
+                    aria-label="Your Name"
+                    autocomplete="name"
+                    maxlength="80"
+                    required>
+
+                <input
+                    type="email"
+                    id="senderEmail"
+                    placeholder="Your Email"
+                    aria-label="Your Email"
+                    autocomplete="email"
+                    maxlength="120"
+                    required>
+
+                <textarea
+                    id="senderMessage"
+                    placeholder="Your Message"
+                    aria-label="Your Message"
+                    maxlength="2000"
+                    required></textarea>
+
+                <button type="submit">
+                    Send Message →
+                </button>
+
+                <p style="font-size:10px;color:var(--muted);">
+                    Your email application will open with
+                    your message ready to send.
+                </p>
+
+            </form>
+
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+    <div class="container">
+
+        <div class="footer-logo">Empress.</div>
+
+        <p>
+            Designed with creativity and dedication
+            by Empress Catherine J. Fufunan.
+        </p>
+
+        <p style="margin-top:8px;">
+            © <span id="year"></span> All Rights Reserved.
+        </p>
+
+    </div>
+</footer>
+
+<button class="back-top" id="backTop"
+    aria-label="Back to top">↑</button>
+
+<script>
+
+// MOBILE NAVIGATION
+
+const menuBtn = document.getElementById("menuBtn");
+const navLinks = document.getElementById("navLinks");
+
+function closeMenu() {
+    navLinks.classList.remove("active");
+    menuBtn.textContent = "☰";
+    menuBtn.setAttribute("aria-expanded","false");
+    menuBtn.setAttribute("aria-label","Open navigation");
+}
+
+menuBtn.addEventListener("click", () => {
+    const isOpen = navLinks.classList.toggle("active");
+
+    menuBtn.textContent = isOpen ? "✕" : "☰";
+    menuBtn.setAttribute("aria-expanded",String(isOpen));
+    menuBtn.setAttribute(
+        "aria-label",
+        isOpen ? "Close navigation" : "Open navigation"
+    );
+});
+
+document.querySelectorAll(".nav-links a").forEach(link => {
+    link.addEventListener("click",closeMenu);
+});
+
+document.addEventListener("keydown",event => {
+    if (event.key === "Escape") {
+        closeMenu();
+    }
+});
+
+// DARK MODE
+
+const themeToggle = document.getElementById("themeToggle");
+
+function applyTheme(isDark) {
+    document.body.classList.toggle("dark",isDark);
+    themeToggle.textContent = isDark ? "☀" : "☾";
+
+    themeToggle.setAttribute(
+        "aria-label",
+        isDark ? "Switch to light mode" : "Switch to dark mode"
+    );
+
+    document.querySelector('meta[name="theme-color"]')
+        .setAttribute("content",isDark ? "#1d1924" : "#faf8fc");
+}
+
+let savedTheme = null;
+
+try {
+    savedTheme = localStorage.getItem("portfolio-theme");
+} catch(error) {
+    savedTheme = null;
+}
+
+const systemPrefersDark =
+    window.matchMedia &&
+    window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+applyTheme(
+    savedTheme === "dark" ||
+    (savedTheme === null && systemPrefersDark)
+);
+
+themeToggle.addEventListener("click",() => {
+    const isDark = !document.body.classList.contains("dark");
+
+    applyTheme(isDark);
+
+    try {
+        localStorage.setItem(
+            "portfolio-theme",
+            isDark ? "dark" : "light"
+        );
+    } catch(error) {
+        // Theme still works during the current visit.
+    }
+});
+
+// SCROLL REVEAL ANIMATIONS
+
+const revealElements = document.querySelectorAll(".reveal");
+
+if ("IntersectionObserver" in window) {
+
+    const revealObserver = new IntersectionObserver(entries => {
+
+        entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+                entry.target.classList.add("show");
+                revealObserver.unobserve(entry.target);
+            }
+
+        });
+
+    },{
+        threshold:0.12
+    });
+
+    revealElements.forEach(element => {
+        revealObserver.observe(element);
+    });
+
+} else {
+
+    revealElements.forEach(element => {
+        element.classList.add("show");
+    });
+
+}
+
+// ACTIVE NAVIGATION
+
+const sections = document.querySelectorAll("section[id]");
+const navigationLinks = document.querySelectorAll(".nav-links a");
+
+if ("IntersectionObserver" in window) {
+
+    const sectionObserver = new IntersectionObserver(entries => {
+
+        entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+
+                navigationLinks.forEach(link => {
+
+                    link.classList.toggle(
+                        "active",
+                        link.getAttribute("href") ===
+                        "#" + entry.target.id
+                    );
+
+                });
+
+            }
+
+        });
+
+    },{
+        rootMargin:"-30% 0px -60% 0px"
+    });
+
+    sections.forEach(section => {
+        sectionObserver.observe(section);
+    });
+
+}
+
+// BACK TO TOP
+
+const backTop = document.getElementById("backTop");
+
+window.addEventListener("scroll",() => {
+
+    backTop.classList.toggle(
+        "visible",
+        window.scrollY > 400
+    );
+
+},{passive:true});
+
+backTop.addEventListener("click",() => {
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+});
+
+// CONTACT FORM
+
+document.getElementById("contactForm")
+.addEventListener("submit",function(event) {
+
+    event.preventDefault();
+
+    const name = document.getElementById("senderName")
+        .value.trim();
+
+    const email = document.getElementById("senderEmail")
+        .value.trim();
+
+    const message = document.getElementById("senderMessage")
+        .value.trim();
+
+    if (!name || !email || !message) {
+        return;
+    }
+
+    const subject = encodeURIComponent(
+        "Portfolio Message from " + name
+    );
+
+    const body = encodeURIComponent(
+        "Name: " + name +
+        "\nEmail: " + email +
+        "\n\nMessage:\n" + message
+    );
+
+    window.location.href =
+        "mailto:efufunan@usa.edu.ph?subject=" +
+        subject + "&body=" + body;
+
+});
+
+// AUTOMATIC FOOTER YEAR
+
+document.getElementById("year").textContent =
+    new Date().getFullYear();
+
+</script>
+
+</body>
+</html>
